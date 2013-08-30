@@ -115,10 +115,14 @@ class iContactApi {
 
 	/**
 	 * This method adds a contact to your iContact account
+	 * possible keys in the $aAccountData array include:
+	 *     prefix, firstName, lastName, suffix, street, street2, city, state,
+	 *     postalCode, phone, fax, business
+	 * possible values for status 
 	 * @access public
 	 * @param string $sEmail
-     * @param array [$aAccountData]
-	 * @param string [$sStatus]
+     * @param array [$aAccountData] see comments above for details of valid keys
+	 * @param string [$sStatus] possible values: normal, bounced, donotcontact, pending, invitable, deleted
 	 * @return object
 	**/
 	public function addContact($sEmail, $aAccountData =  array(), $sStatus = 'normal') {
